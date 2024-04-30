@@ -65,6 +65,8 @@
 			var positionX =0;
 			var points = 0;
 			var speed = 10;
+			var positionY;
+			var speedY;
 
 			
 			/* 
@@ -76,7 +78,13 @@
 				positionX = positionX + speed;
 				moveBoxTo(positionX);
 					
+				if (positionX >boardWidth){
+					speed = speed * -1;
+				}
 
+				if (positionX > boardwidth) {
+					speed = speed * -1;
+				}
 			};
 
 			/* 
@@ -90,9 +98,13 @@
 				changeBoxText(points);
 				speed = speed + 3;
 
-
-			};
-		})();
+				if (speed > 0) {
+					speed = speed + 3;
+				}
+				else{ 
+					speed = speed - 3;
+				}
+			};		
 	</script>
 </body>
 </html>
